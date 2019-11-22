@@ -64,10 +64,15 @@ https://github.com
 
 - Inicializar o servidor ( Necessário MongoDB rodando na porta 27017 sem usuário e senha)
 
-  > cd backend
-  > yarn
-  > yarn dev
+  - entrar na pasta backend
+    > cd backend
+  - instalar dependencias
+    > yarn
+  - inicializar aplicação
+    > yarn dev
 
 - Inicializar a parte de frontend
-  > cd frontend
-  > ng serve
+  - entar na pasta frontend
+    > cd frontend
+  - inicializar aplicação
+    > ng serve
