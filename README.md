@@ -15,6 +15,7 @@ A aplicação deverá ser hospedada no Heroku, usando NodeJS como servidor de AP
 - [ ] Hospedagem Heroku
 - [x] NodeJS no backend
 - [x] AngularJS no frontend
+- [x] Bootstrap
 
 # Cadastro
 
