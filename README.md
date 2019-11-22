@@ -1,37 +1,43 @@
 # Desafio
+
 Desafio de Desenvolvedor Fullstack Ecossistema Virtus
 
 # Objetivo
+
 Construir uma aplicação de cadastro de Planos, com as operações CRUD com Banco de Dados MongoDB, usando o add-on do MLab no Heroku.
 
 A aplicação deverá ser hospedada no Heroku, usando NodeJS como servidor de API’s para as operações com o banco de dados e ferramentas do AngularJS para Front-end.
 
 É livre o uso de Frameworks como Bootstrap, Datatables e outros.
 
+- [x] Bando de Dados MongoDB
+- [ ] MLab no Heroku
+- [ ] Hospedagem Heroku
+- [x] NodeJS no backend
+- [x] AngularJS no frontend
+
 # Cadastro
 
- O cadastro deverá conter       
+O cadastro deverá conter
 
--  Campo para Código do Plano (Sequencial) e não editável;
+- [x] Campo para Código do Plano (Sequencial) e não editável;
 
--  Descrição;
+- [x] Descrição;
 
--  Vigência Inicial do Plano (Data);
+- [x] Vigência Inicial do Plano (Data);
 
--  Vigência Final do Plano (Data) 
+- [x] Vigência Final do Plano (Data)
 
--  Valor da Parcela;
+- [x] Valor da Parcela;
 
--   % Desconto Permitido;
+- [x] % Desconto Permitido;
 
--
+# O Desenvolvimento
 
-#  O Desenvolvimento
-
-publicar projeto no GitHub e disponibilizar aplicação para acesso.           
-
+- [x] Publicar projeto no GitHub e disponibilizar aplicação para acesso.
 
 # Ferramentas
+
 ⁃ Heroku
 https://www.heroku.com/
 
@@ -44,10 +50,24 @@ https://devcenter.heroku.com/articles/getting-started-with-nodejs
 
 ⁃ MongoDB
 
-  https://elements.heroku.com/addons/mongolab
+https://elements.heroku.com/addons/mongolab
 
 ⁃ Github
 
-  https://github.com
-  
+https://github.com
 
+# Para ver a aplicação
+
+- Clone do repositório
+
+  > git clone
+
+- Inicializar o servidor ( Necessário MongoDB rodando na porta 27017 sem usuário e senha)
+
+  > cd backend
+  > yarn
+  > yarn dev
+
+- Inicializar a parte de frontend
+  > cd frontend
+  > ng serve

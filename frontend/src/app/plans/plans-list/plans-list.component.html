@@ -1,0 +1,44 @@
+<div>
+  <div class="card-header bg-primary text-light">
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Descriçao</th>
+          <th scope="col">Vigência Inical</th>
+          <th scope="col">Vigência Final</th>
+          <th scope="col">Valor da Parcela</th>
+          <th scope="col">Desconto Permitido (%)</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans">
+          <td>{{ plan.code }}</td>
+          <td>{{ plan.description }}</td>
+          <td>{{ plan.initialValidity | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ plan.finalValidity | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ plan.price | currency:'BRL' }}</td>
+          <td>{{ plan.discount }}%</td>
+          <td>
+            <a class="btn btn-primary" title="Editar" routerLink="/planos/editar/{{ plan._id }}">
+              <i class="fas fa-edit"></i>
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-danger" title="Deletar" (click)="remove(plan._id)">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a routerLink="/planos/novo" class="btn btn-primary">Cadastrar Plano</a>
+
+  </div>
+</div>

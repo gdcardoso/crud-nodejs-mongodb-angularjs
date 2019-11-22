@@ -1,0 +1,73 @@
+<div class="card">
+  <div class="card-header bg-primary text-light">
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+
+      <div class="form-group">
+        <label>Descrição</label>
+        <textarea type="text"class="form-control" [(ngModel)]="plan.description" name="description" #description="ngModel" rows="3" required minlength="10"></textarea>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+          <div *ngIf="description.errors.required">
+            Descrição é obrigatória.
+          </div>
+          <div *ngIf="description.errors.minlength">
+            Descrição precisa ter no mínimo 10 caracteres.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Vigência Inicial</label>
+        <input type="date" class="form-control" [(ngModel)]="plan.initialValidity" name="initialValidity" #initialValidity="ngModel" required />
+
+        <div *ngIf="initialValidity.invalid && (initialValidity.dirty || initialValidity.touched)" class="alert alert-danger">
+          <div *ngIf="initialValidity.errors.required">
+            Vigência Inicial é obrigatória.
+          </div>
+          <div *ngIf="initialValidity.errors.minlength">
+            Data inválida
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Vigência Final</label>
+        <input type="date" class="form-control" [(ngModel)]="plan.finalValidity" name="finalValidity" #finalValidity="ngModel" required />
+        <div *ngIf="finalValidity.invalid && (finalValidity.dirty || finalValidity.touched)" class="alert alert-danger">
+          <div *ngIf="finalValidity.errors.required">
+            Vigência Final é obrigatória.
+          </div>
+          <div *ngIf="finalValidity.errors.minlength">
+            Data inválida
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Valor da Parcela</label>
+        <input type="number" class="form-control" [(ngModel)]="plan.price" name="price" #price="ngModel" required />
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+          <div *ngIf="price.errors.required">
+            Valor da Parcela é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Desconto Permitido</label>
+        <input type="number" class="form-control" [(ngModel)]="plan.discount" name="discount" #discount="ngModel" required />
+        <div *ngIf="discount.invalid && (discount.dirty || discount.touched)" class="alert alert-danger">
+          <div *ngIf="discount.errors.required">
+            Desconto é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!form.form.valid">Salvar</button>
+      <a routerLink="/planos" class="btn btn-secondary ml-2">Cancelar</a>
+
+    </form>
+  </div>
+</div>
